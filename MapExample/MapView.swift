@@ -33,7 +33,6 @@ class AppleGoogleMapView: UIView {
     }
     let locationManager: CLLocationManager = CLLocationManager()
     
-    let clusteringManager = FBClusteringManager()
     var gmsMapView: GMSMapView? {
         didSet {
             if gmsMapView != nil {
@@ -105,7 +104,6 @@ class AppleGoogleMapView: UIView {
     
     //MARK: - Setup Views
     func setup() {
-        clusteringManager.delegate = self
         //requestLocationAuthorization()
     }
     
@@ -285,7 +283,7 @@ class AppleGoogleMapView: UIView {
         }
     }
     
-    func redrawAnnotations(){
+    /*func redrawAnnotations(){
         if let mkMapView = mkMapView {
             OperationQueue().addOperation({
                 let mapBoundsWidth = Double(mkMapView.bounds.size.width)
@@ -295,7 +293,7 @@ class AppleGoogleMapView: UIView {
                 self.clusteringManager.displayAnnotations(annotationArray, onMapView:mkMapView)
             })
         }
-    }
+    }*/
 
     func calculateMetreDistanceBetweenTwoCoords(_ sourceCoord:CLLocationCoordinate2D, destinationCoord:CLLocationCoordinate2D) -> Double{
 
@@ -408,13 +406,4 @@ extension AppleGoogleMapView {
         }
     }
     
-}
-
-//MARK: - FBClusteringManagerDelegate View Delegates
-extension AppleGoogleMapView: FBClusteringManagerDelegate {
-
-    func cellSizeFactorForCoordinator(_ coordinator:FBClusteringManager) -> CGFloat{
-        return CGFloat(clusterCellSize)
-    }
-
 }

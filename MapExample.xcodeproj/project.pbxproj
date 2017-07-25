@@ -14,13 +14,6 @@
 		88170C231F1DD35C001ED506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88170C211F1DD35C001ED506 /* Main.storyboard */; };
 		88170C251F1DD35C001ED506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88170C241F1DD35C001ED506 /* Assets.xcassets */; };
 		88170C281F1DD35C001ED506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88170C261F1DD35C001ED506 /* LaunchScreen.storyboard */; };
-		88170C391F1DD547001ED506 /* FBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88170C321F1DD547001ED506 /* FBAnnotation.swift */; };
-		88170C3A1F1DD547001ED506 /* FBAnnotationCluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88170C331F1DD547001ED506 /* FBAnnotationCluster.swift */; };
-		88170C3B1F1DD547001ED506 /* FBAnnotationClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88170C341F1DD547001ED506 /* FBAnnotationClusterView.swift */; };
-		88170C3C1F1DD547001ED506 /* FBBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88170C351F1DD547001ED506 /* FBBoundingBox.swift */; };
-		88170C3D1F1DD547001ED506 /* FBClusteringManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88170C361F1DD547001ED506 /* FBClusteringManager.swift */; };
-		88170C3E1F1DD547001ED506 /* FBQuadTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88170C371F1DD547001ED506 /* FBQuadTree.swift */; };
-		88170C3F1F1DD547001ED506 /* FBQuadTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88170C381F1DD547001ED506 /* FBQuadTreeNode.swift */; };
 		88170C431F1DF00F001ED506 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88170C421F1DF00F001ED506 /* MapView.swift */; };
 		883A4E101F20BA440067F087 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883A4E0F1F20BA440067F087 /* MapAnnotation.swift */; };
 		88CB794F1F1F2D6500AD09E9 /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CB794E1F1F2D6500AD09E9 /* GooglePlace.swift */; };
@@ -42,13 +35,6 @@
 		88170C241F1DD35C001ED506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88170C271F1DD35C001ED506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88170C291F1DD35C001ED506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88170C321F1DD547001ED506 /* FBAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotation.swift; sourceTree = "<group>"; };
-		88170C331F1DD547001ED506 /* FBAnnotationCluster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotationCluster.swift; sourceTree = "<group>"; };
-		88170C341F1DD547001ED506 /* FBAnnotationClusterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotationClusterView.swift; sourceTree = "<group>"; };
-		88170C351F1DD547001ED506 /* FBBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBBoundingBox.swift; sourceTree = "<group>"; };
-		88170C361F1DD547001ED506 /* FBClusteringManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBClusteringManager.swift; sourceTree = "<group>"; };
-		88170C371F1DD547001ED506 /* FBQuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBQuadTree.swift; sourceTree = "<group>"; };
-		88170C381F1DD547001ED506 /* FBQuadTreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBQuadTreeNode.swift; sourceTree = "<group>"; };
 		88170C421F1DF00F001ED506 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		883A4E0F1F20BA440067F087 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		88CB794E1F1F2D6500AD09E9 /* GooglePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
@@ -104,7 +90,6 @@
 		88170C1C1F1DD35C001ED506 /* MapExample */ = {
 			isa = PBXGroup;
 			children = (
-				88170C311F1DD547001ED506 /* FBAnnotationClustering */,
 				88CB794B1F1F2CAC00AD09E9 /* Model */,
 				88CB79501F1F326E00AD09E9 /* Extension */,
 				88170C421F1DF00F001ED506 /* MapView.swift */,
@@ -117,20 +102,6 @@
 				88170C291F1DD35C001ED506 /* Info.plist */,
 			);
 			path = MapExample;
-			sourceTree = "<group>";
-		};
-		88170C311F1DD547001ED506 /* FBAnnotationClustering */ = {
-			isa = PBXGroup;
-			children = (
-				88170C321F1DD547001ED506 /* FBAnnotation.swift */,
-				88170C331F1DD547001ED506 /* FBAnnotationCluster.swift */,
-				88170C341F1DD547001ED506 /* FBAnnotationClusterView.swift */,
-				88170C351F1DD547001ED506 /* FBBoundingBox.swift */,
-				88170C361F1DD547001ED506 /* FBClusteringManager.swift */,
-				88170C371F1DD547001ED506 /* FBQuadTree.swift */,
-				88170C381F1DD547001ED506 /* FBQuadTreeNode.swift */,
-			);
-			path = FBAnnotationClustering;
 			sourceTree = "<group>";
 		};
 		88CB794B1F1F2CAC00AD09E9 /* Model */ = {
@@ -288,23 +259,16 @@
 			files = (
 				88CB79541F1F32AF00AD09E9 /* MKMapViewExtension.swift in Sources */,
 				8807A2251F27075F006A1AAB /* TypesTableViewController.swift in Sources */,
-				88170C3F1F1DD547001ED506 /* FBQuadTreeNode.swift in Sources */,
 				88170C431F1DF00F001ED506 /* MapView.swift in Sources */,
-				88170C391F1DD547001ED506 /* FBAnnotation.swift in Sources */,
 				88CB79521F1F328C00AD09E9 /* UIViewExtension.swift in Sources */,
 				88170C201F1DD35C001ED506 /* ViewController.swift in Sources */,
-				88170C3C1F1DD547001ED506 /* FBBoundingBox.swift in Sources */,
 				88170C1E1F1DD35C001ED506 /* AppDelegate.swift in Sources */,
-				88170C3B1F1DD547001ED506 /* FBAnnotationClusterView.swift in Sources */,
 				88CB794F1F1F2D6500AD09E9 /* GooglePlace.swift in Sources */,
 				88CB79561F1F331A00AD09E9 /* MapView+MKMapDelegate.swift in Sources */,
 				88CB795C1F1F34F500AD09E9 /* GoogleDataProvider.swift in Sources */,
-				88170C3A1F1DD547001ED506 /* FBAnnotationCluster.swift in Sources */,
 				88CB795A1F1F33B900AD09E9 /* MapView+LocationManagerDelegate.swift in Sources */,
 				88CB79581F1F335400AD09E9 /* MapView+GMSMapDelegate.swift in Sources */,
 				883A4E101F20BA440067F087 /* MapAnnotation.swift in Sources */,
-				88170C3D1F1DD547001ED506 /* FBClusteringManager.swift in Sources */,
-				88170C3E1F1DD547001ED506 /* FBQuadTree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

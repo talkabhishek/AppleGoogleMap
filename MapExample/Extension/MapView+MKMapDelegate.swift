@@ -12,13 +12,7 @@ import MapKit
 extension AppleGoogleMapView: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         var reuseId = ""
-        if annotation.isKind(of: FBAnnotationCluster.self) {
-            reuseId = "Cluster"
-            var clusterView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
-            clusterView = FBAnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId)
-            return clusterView
-            
-        } else if let markannotation = annotation as? MapAnnotation {
+        if let markannotation = annotation as? MapAnnotation {
             reuseId = "MarkPin"
             var view: MKAnnotationView
             if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
