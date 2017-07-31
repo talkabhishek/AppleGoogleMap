@@ -10,6 +10,11 @@ import Foundation
 import MapKit
 import GoogleMaps
 
+public enum MapType {
+    case apple
+    case google
+}
+
 @objc protocol AppleGoogleMapDelegate: class {
     @objc optional func mapView(_ mapView: AppleGoogleMapView, LocationManager manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
 
@@ -20,19 +25,18 @@ import GoogleMaps
     @objc optional func mapRegionChanged(_ mapView: AppleGoogleMapView)
 }
 
-class AppleGoogleMapView: UIView {
-    
-    
-    var googleMapAPIkey: String? {
+@IBDesignable
+open class AppleGoogleMapView: UIView {
+    let locationManager: CLLocationManager = CLLocationManager()
+    @IBInspectable
+    public var googleAPIkey: String? {
         didSet {
-            if gmsMapView == nil {
-                GMSServices.provideAPIKey(googleMapAPIkey!)
+            if gmsMapView == nil && googleAPIkey != nil {
+                GMSServices.provideAPIKey(googleAPIkey!)
                 gmsMapView = GMSMapView()
             }
         }
     }
-    let locationManager: CLLocationManager = CLLocationManager()
-    
     var gmsMapView: GMSMapView? {
         didSet {
             if gmsMapView != nil {
@@ -48,14 +52,32 @@ class AppleGoogleMapView: UIView {
         }
     }
     var trackUserBtn: UIButton?
-    var isMKMapKit: Bool = true {
+
+    @IBInspectable
+    public var appleMap: Bool = true {
         didSet {
-            if isMKMapKit {
+            if appleMap {
+                mapType = .apple
+            }
+        }
+    }
+    @IBInspectable
+    public var googleMap: Bool = false {
+        didSet {
+            if googleMap {
+                mapType = .google
+            }
+        }
+    }
+    
+    public var mapType: MapType = .apple {
+        didSet {
+            if mapType == MapType.apple {
                 gmsMapView = nil
                 mkMapView = MKMapView()
-                setupMapKit()
-            } else if gmsMapView == nil && googleMapAPIkey != nil {
-                GMSServices.provideAPIKey(googleMapAPIkey!)
+            }
+            else if googleAPIkey != nil {
+                GMSServices.provideAPIKey(googleAPIkey!)
                 mkMapView = nil
                 gmsMapView = GMSMapView()
             }
@@ -83,28 +105,42 @@ class AppleGoogleMapView: UIView {
 
     var delegate: AppleGoogleMapDelegate?
 
-    override func awakeFromNib() { }
+    override open func awakeFromNib() { }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    init(type: MapType, googleAPIkey: String? = nil) {
+        super.init(frame: UIScreen.main.bounds)
+        setup()
+        if googleAPIkey != nil {
+            self.googleAPIkey = googleAPIkey
+        }
+        setup(type: type)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
 
-    override func layoutSubviews() { }
+    override open func layoutSubviews() { }
 
     deinit {
         // perform the deinitialization
         self.mkMapView?.delegate = nil
+        self.gmsMapView?.delegate = nil
     }
     
     //MARK: - Setup Views
     func setup() {
         //requestLocationAuthorization()
+    }
+    
+    func setup(type: MapType) {
+        self.mapType = type
     }
     
     func setupMapKit() {
@@ -210,7 +246,7 @@ class AppleGoogleMapView: UIView {
         } else {
             let numberOfPoints = drawingCoordinates.count
             if(numberOfPoints > 2){
-                if isMKMapKit {
+                if mapType == MapType.apple {
                     let myPolygon = MKPolygon(coordinates: &drawingCoordinates, count: numberOfPoints)
                     mkMapView?.add(myPolygon)
                 } else {
@@ -336,7 +372,7 @@ class AppleGoogleMapView: UIView {
 extension AppleGoogleMapView {
     //MARK: - touch Canvasview delegates
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let drawBtn = drawBtn else {
             return
         }
@@ -347,7 +383,7 @@ extension AppleGoogleMapView {
         }
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let drawBtn = drawBtn else {
             return
         }
@@ -358,7 +394,7 @@ extension AppleGoogleMapView {
         }
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let drawBtn = drawBtn else {
             return
         }

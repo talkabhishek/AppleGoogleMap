@@ -10,7 +10,7 @@ import MapKit
 
 //MARK: - MKMap View Delegates
 extension AppleGoogleMapView: MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         var reuseId = ""
         if let markannotation = annotation as? MapAnnotation {
             reuseId = "MarkPin"
@@ -36,21 +36,21 @@ extension AppleGoogleMapView: MKMapViewDelegate {
         }
     }
     
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+    public func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let annotation = view.annotation as? MapAnnotation {
             selectedAnnotation = annotation
             delegate?.mapView?(self, didSelect: annotation)
         }
     }
     
-    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+    public func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
         if let annotation = view.annotation as? MapAnnotation {
             delegate?.mapView?(self, didDeselect: annotation)
             selectedAnnotation = nil
         }
     }
     
-    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+    public func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         centerOfMap = mkMapView?.region.center
         //redrawAnnotations()
         guard let mkMapView = mkMapView, let trackUserBtn = trackUserBtn else {
@@ -64,7 +64,7 @@ extension AppleGoogleMapView: MKMapViewDelegate {
     }
     
     
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+    public func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKPolyline {
             let lineView = MKPolylineRenderer(overlay: overlay)
             lineView.strokeColor = UIColor.black.withAlphaComponent(0.7)

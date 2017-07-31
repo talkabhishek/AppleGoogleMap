@@ -20,7 +20,6 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="PnU-v8-eMh">
                         <nil key="title"/>
@@ -54,6 +53,75 @@
             </objects>
             <point key="canvasLocation" x="1076" y="137.18140929535232"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Wic-IE-Y1d">
+            <objects>
+                <viewController id="U5S-Wl-lEF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eoq-rH-4SY"/>
+                        <viewControllerLayoutGuide type="bottom" id="7aS-Iy-wTB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eeK-aV-ccQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opH-Hv-ET3" customClass="AppleGoogleMapView" customModule="MapExample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="appleMap" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="googleMap" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="opH-Hv-ET3" firstAttribute="top" secondItem="Eoq-rH-4SY" secondAttribute="bottom" id="GfX-Jy-OGN"/>
+                            <constraint firstAttribute="trailing" secondItem="opH-Hv-ET3" secondAttribute="trailing" id="Vu0-En-gFJ"/>
+                            <constraint firstItem="opH-Hv-ET3" firstAttribute="leading" secondItem="eeK-aV-ccQ" secondAttribute="leading" id="adu-w0-y39"/>
+                            <constraint firstItem="7aS-Iy-wTB" firstAttribute="top" secondItem="opH-Hv-ET3" secondAttribute="bottom" id="dEs-Go-E0B"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fja-Vn-Pnn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081" y="811"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sHG-xy-0TG">
+            <objects>
+                <viewController id="e6j-RB-maD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p6H-ZY-UDK"/>
+                        <viewControllerLayoutGuide type="bottom" id="IcE-xd-03y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XeE-G8-mDz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cP-pK-r8A" customClass="AppleGoogleMapView" customModule="MapExample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="appleMap" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="googleMap" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="googleAPIkey" value="AIzaSyDVZ5N3lR5xH0RQYn_YC5h-cKIvkDV65Ms"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6cP-pK-r8A" firstAttribute="leading" secondItem="XeE-G8-mDz" secondAttribute="leading" id="8cp-B1-MqC"/>
+                            <constraint firstItem="6cP-pK-r8A" firstAttribute="top" secondItem="p6H-ZY-UDK" secondAttribute="bottom" id="PzP-6e-il7"/>
+                            <constraint firstAttribute="trailing" secondItem="6cP-pK-r8A" secondAttribute="trailing" id="VNP-7r-qOe"/>
+                            <constraint firstItem="IcE-xd-03y" firstAttribute="top" secondItem="6cP-pK-r8A" secondAttribute="bottom" id="stz-6t-WqQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M5y-VK-5SJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1082" y="1488"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="7mV-28-W5V">
             <objects>
@@ -85,11 +153,11 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TXO-Dl-5mA" id="HyP-4i-ZJa">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vqm-EC-nDb">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

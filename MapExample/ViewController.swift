@@ -24,16 +24,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        appleMapView = AppleGoogleMapView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        appleMapView = AppleGoogleMapView(type: MapType.apple)
         self.view.addSubview(appleMapView!)
-        appleMapView?.isMKMapKit = true
         appleMapView?.isDrawingEnable = true
         appleMapView?.requestLocationAuthorization()
-        
-        
-        googleMapView = AppleGoogleMapView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        googleMapView?.googleMapAPIkey  = googleMapAPIkey
-        googleMapView?.isMKMapKit = false
+  
+        googleMapView = AppleGoogleMapView(type: .google, googleAPIkey: googleMapAPIkey)
+        //googleMapView?.googleMapAPIkey  = googleMapAPIkey
         googleMapView?.isDrawingEnable = true
         googleMapView?.requestLocationAuthorization()
         

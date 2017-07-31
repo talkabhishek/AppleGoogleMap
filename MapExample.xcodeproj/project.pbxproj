@@ -14,7 +14,7 @@
 		88170C231F1DD35C001ED506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88170C211F1DD35C001ED506 /* Main.storyboard */; };
 		88170C251F1DD35C001ED506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88170C241F1DD35C001ED506 /* Assets.xcassets */; };
 		88170C281F1DD35C001ED506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88170C261F1DD35C001ED506 /* LaunchScreen.storyboard */; };
-		88170C431F1DF00F001ED506 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88170C421F1DF00F001ED506 /* MapView.swift */; };
+		88170C431F1DF00F001ED506 /* AppleGoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88170C421F1DF00F001ED506 /* AppleGoogleMapView.swift */; };
 		883A4E101F20BA440067F087 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883A4E0F1F20BA440067F087 /* MapAnnotation.swift */; };
 		88CB794F1F1F2D6500AD09E9 /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CB794E1F1F2D6500AD09E9 /* GooglePlace.swift */; };
 		88CB79521F1F328C00AD09E9 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CB79511F1F328C00AD09E9 /* UIViewExtension.swift */; };
@@ -35,7 +35,7 @@
 		88170C241F1DD35C001ED506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88170C271F1DD35C001ED506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88170C291F1DD35C001ED506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88170C421F1DF00F001ED506 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		88170C421F1DF00F001ED506 /* AppleGoogleMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleGoogleMapView.swift; sourceTree = "<group>"; };
 		883A4E0F1F20BA440067F087 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		88CB794E1F1F2D6500AD09E9 /* GooglePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
 		88CB79511F1F328C00AD09E9 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 			children = (
 				88CB794B1F1F2CAC00AD09E9 /* Model */,
 				88CB79501F1F326E00AD09E9 /* Extension */,
-				88170C421F1DF00F001ED506 /* MapView.swift */,
+				88170C421F1DF00F001ED506 /* AppleGoogleMapView.swift */,
 				88170C1D1F1DD35C001ED506 /* AppDelegate.swift */,
 				88170C1F1F1DD35C001ED506 /* ViewController.swift */,
 				8807A2241F27075F006A1AAB /* TypesTableViewController.swift */,
@@ -259,7 +259,7 @@
 			files = (
 				88CB79541F1F32AF00AD09E9 /* MKMapViewExtension.swift in Sources */,
 				8807A2251F27075F006A1AAB /* TypesTableViewController.swift in Sources */,
-				88170C431F1DF00F001ED506 /* MapView.swift in Sources */,
+				88170C431F1DF00F001ED506 /* AppleGoogleMapView.swift in Sources */,
 				88CB79521F1F328C00AD09E9 /* UIViewExtension.swift in Sources */,
 				88170C201F1DD35C001ED506 /* ViewController.swift in Sources */,
 				88170C1E1F1DD35C001ED506 /* AppDelegate.swift in Sources */,

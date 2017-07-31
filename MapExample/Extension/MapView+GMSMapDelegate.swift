@@ -10,18 +10,18 @@ import GoogleMaps
 
 //MARK: - GMSMap View Delegates
 extension AppleGoogleMapView: GMSMapViewDelegate {
-    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+    public func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         centerOfMap = mapView.camera.target
         //reverseGeocodeCoordinate(coordinate: position.target)
     }
     
-    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+    public func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         if (gesture) {
             mapView.selectedMarker = nil
         }
     }
     
-    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+    public func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         NSObject.cancelPreviousPerformRequests(withTarget: self)
         perform(#selector(AppleGoogleMapView.callRegionChangeDelegate), with: nil, afterDelay: 0.5)
     }
@@ -30,7 +30,7 @@ extension AppleGoogleMapView: GMSMapViewDelegate {
         delegate?.mapRegionChanged?(self)
     }
     
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+    public func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         if let annotation = marker as? MapAnnotation {
             selectedAnnotation = annotation
             delegate?.mapView?(self, didSelect: annotation)
@@ -41,7 +41,7 @@ extension AppleGoogleMapView: GMSMapViewDelegate {
         return false
     }
     
-    func mapView(_ mapView: GMSMapView, didTap overlay: GMSOverlay) {
+    public func mapView(_ mapView: GMSMapView, didTap overlay: GMSOverlay) {
         if let annotation = selectedAnnotation {
             delegate?.mapView?(self, didDeselect: annotation)
             selectedAnnotation = nil
@@ -49,11 +49,11 @@ extension AppleGoogleMapView: GMSMapViewDelegate {
     }
 
     
-    func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
+    public func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
         return delegate?.mapView?(mapView, markerInfoContents: marker)
     }
     
-    func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
+    public func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
         mapView.selectedMarker = nil
         return false
     }
